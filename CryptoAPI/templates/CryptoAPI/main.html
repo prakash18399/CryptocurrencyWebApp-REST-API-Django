@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+API Page
+{% endblock title %}
+
+{% block content %}
+<br>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope='col'>Name</th>
+                <th scope='col'>Price</th>
+                <th scope='col'>Market Cap</th>
+           
+            </tr>
+        </thead>
+        <tbody>
+            {% if data %}
+                {% for obj in data %}
+                    <tr>
+                     
+                        <td class="align-middle">{{obj.cryptocurrency}}</td>
+                        <td class="align-middle">{{obj.price}}</td>
+                        <td class="align-middle">{{obj.market_cap}}</td>
+                
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <h3>Nothing here...</h3>
+            {% endif %}
+        </tbody>
+
+    </table>
+{% endblock content %}
+
+{% block scripts %}
+{% endblock scripts %}
